@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2c3e50">
     <title>LOJA DE DOCES</title>
@@ -12,8 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/code/style/style_loja.css">
 </head>
+
 <body>
-     <div class="container">
+    <div class="container">
         <div class="menuLinks">
             <!-- Ícone de menu que abre/fecha a tabela -->
             <button id="abrir" onclick="alternarMenu()">
@@ -66,6 +68,14 @@
                         <a href="#">Bolos</a>
                     </div>
                 </div>
+
+                <!--Tabela que faz o filtro dos produtos-->
+                <div class="filtros dropdown">
+                    <button onclick="filtrar('todos')">Todos</button>
+                    <button onclick="filtrar('bolo')">Bolos</button>
+                    <button onclick="filtrar('combo')">Combos</button>
+                    <button onclick="filtrar('promocao')">Promocao</button>
+                </div>
             </div>
         </div>
 
@@ -78,65 +88,81 @@
             </div>
 
             <div class="carrinho-loja" id="abrir-carrinho">
-                <img src="/code/img/vista-lateral-vazia-do-carrinho-de-compras.png" class="carrinho" alt="Carrinho de compras">
+                <img src="/code/img/vista-lateral-vazia-do-carrinho-de-compras.png" class="carrinho"
+                    alt="Carrinho de compras">
                 <div class="contador-carrinho" id="contador-carrinho">0</div>
                 <h2>Carrinho</h2>
-            </div> 
-        </div>  
+            </div>
+        </div>
     </div>
 
-    <div class="produtoGrid">
-        <div class="produto">
-            <img src="https://tse4.mm.bing.net/th/id/OIP.AP5_Uh5AFt3ycioN-GQsOwHaEp?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bolo de Chocolate" class="imagemProduto">
-            <h3>Bolo de Chocolate</h3>
-            <p>Delicioso bolo de chocolate com recheio e cobertura</p>
-            <div class="preco">R$ 45,90</div>
-            <button class="adicionar-carrinho" data-id="1" data-nome="Bolo de Chocolate" data-preco="45.90">Adicionar ao Carrinho</button>
+    <!-- Lista de produtos com filtragem-->
+    <div class="produtos">
+        <div class="produtoGrid">
+            <!--Cada produto: produto1-->
+            <div class="produto bolo">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.AP5_Uh5AFt3ycioN-GQsOwHaEp?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Bolo de Chocolate" class="imagemProduto">
+                <h3>Bolo de Chocolate</h3>
+                <p>Donuts com cobertura colorida e sabores variados</p>
+                <p>R$ 30,00</p>
+                <button class="adicionar-carrinho" data-id="1" data-nome="Bolo de Chocolate" data-preco="30.00">Adicionar ao
+                    Carrinho</button>
+            </div>
         </div>
-        
-        <div class="produto">
-            <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Cupcake" class="imagemProduto">
-            <h3>Cupcake Gourmet</h3>
-            <p>Cupcake com massa fofinha e cobertura especial</p>
-            <div class="preco">R$ 8,50</div>
-            <button class="adicionar-carrinho" data-id="2" data-nome="Cupcake Gourmet" data-preco="8.50">Adicionar ao Carrinho</button>
+        <!--Cada produto: produto2-->
+        <div class="produtoGrid">
+            <div class="produto bolo">
+                <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Bolo de Morango" class="imagemProduto">
+                <h3>Bolo de Morango</h3>
+                <p>Bolo temático para festas com personalização</p>
+                <div class="preco">R$ 35,00</div>
+                <button class="adicionar-carrinho" data-id="2" data-nome="Bolo de Morango" data-preco="35.00">Adicionar ao
+                    Carrinho</button>
+            </div>
         </div>
-        
-        <div class="produto">
-            <img src="https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Donuts" class="imagemProduto">
-            <h3>Donuts Coloridos</h3>
-            <p>Donuts com cobertura colorida e sabores variados</p>
-            <div class="preco">R$ 7,90</div>
-            <button class="adicionar-carrinho" data-id="3" data-nome="Donuts Coloridos" data-preco="7.90">Adicionar ao Carrinho</button>
+        <!--Cada produto: produto3-->
+        <div class="produtoGrid">
+            <div class="produto combo">
+                <img src="https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Combo Festa" class="imagemProduto">
+                <h3>Combo Festa</h3>
+                <p>Cupcake com massa fofinha e cobertura especial</p>
+                <p>R$ 80,00</p>
+                <button class="adicionar-carrinho" data-id="3" data-nome="Combo Festa" data-preco="80.00">Adicionar ao
+                    Carrinho</button>
+            </div>
         </div>
-        
-        <div class="produto">
-            <img src="https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Torta de Morango" class="imagemProduto">
-            <h3>Torta de Morango</h3>
-            <p>Torta cremosa com morangos frescos e chantilly</p>
-            <div class="preco">R$ 32,90</div>
-            <button class="adicionar-carrinho" data-id="4" data-nome="Torta de Morango" data-preco="32.90">Adicionar ao Carrinho</button>
+        <!--Cada produto: produto4-->
+        <div class="produtoGrid">
+            <div class="produto combo">
+                <img src="https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                    alt="Combo Pequeno" class="imagemProduto">
+                <h3>Combo Pequeno</h3>
+                <p>12 brigadeiros gourmet com sabores variados</p>
+                <p>R$ 50,00</p>
+                <button class="adicionar-carrinho" data-id="4" data-nome="Combo Pequeno" data-preco="50.00">Adicionar ao
+                    Carrinho</button>
+            </div>
         </div>
-        
-        <div class="produto">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.CP8ylQhcmQ5WbSJu60bWGwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brigadeiros" class="imagemProduto">
-            <h3>Caixa de Brigadeiros</h3>
-            <p>12 brigadeiros gourmet com sabores variados</p>
-            <div class="preco">R$ 24,90</div>
-            <button class="adicionar-carrinho" data-id="5" data-nome="Caixa de Brigadeiros" data-preco="24.90">Adicionar ao Carrinho</button>
-        </div>
-        
-        <div class="produto">
-            <img src="https://tse2.mm.bing.net/th/id/OIP.1vjQsPJMXsOyx4VPxAoY7wHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bolo de Festa" class="imagemProduto">
-            <h3>Bolo de Aniversário</h3>
-            <p>Bolo temático para festas com personalização</p>
-            <div class="preco">R$ 89,90</div>
-            <button class="adicionar-carrinho" data-id="6" data-nome="Bolo de Aniversário" data-preco="89.90">Adicionar ao Carrinho</button>
+        <!--Cada produto: produto5-->
+        <div class="produtoGrid">
+            <div class="produto promocao">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.CP8ylQhcmQ5WbSJu60bWGwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    class="imagemProduto">
+                <h3>Promoçao</h3>
+                <p>Torta cremosa com morangos frescos e chantilly</p>
+                <p>R$ 20,00</p>
+                <button class="adicionar-carrinho" data-id="5" data-nome="Promocao" data-preco="20.00">Adicionar ao
+                    Carrinho</button>
+            </div>
         </div>
     </div>
-    
+    </div>
+
     <div class="overlay" id="overlay"></div>
-    
+
     <div class="carrinho-modal" id="carrinho">
         <button class="fechar-carrinho" id="fechar-carrinho">
             <i class="fa fa-times"></i>
@@ -150,10 +176,11 @@
             <i class="fa fa-check-circle"></i> Confirmar Compra
         </button>
     </div>
-    
+
     <div class="compra-confirmada" id="compra-confirmada">
         <h3>Compra Confirmada!</h3>
-        <p>Obrigado por sua compra. Em breve você receberá um e-mail com os detalhes do pedido e informações de entrega.</p>
+        <p>Obrigado por sua compra. Em breve você receberá um e-mail com os detalhes do pedido e informações de entrega.
+        </p>
         <button id="fechar-confirmacao">Continuar Comprando</button>
     </div>
 
@@ -161,4 +188,5 @@
 
     <script src="/code/scripts/script_loja.js"></script>
 </body>
+
 </html>

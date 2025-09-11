@@ -161,9 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmarCompraBtn.addEventListener('click', function() {
                 // Fecha o carrinho
                 carrinhoModal.classList.remove('aberto');
-                overlay.classList.add('ativo');
                 
-                // Mostra a mensagem de confirmação
+                overlay.classList.add('ativo');
                 compraConfirmada.classList.add('ativo');
             });
             
@@ -208,3 +207,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+
+function filtrar(categoria) {
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+        // Se o botão for "todos", mostramos todos
+        if(categoria === 'todos') {
+            produto.style.display = 'block';
+        } else {
+            // Se o produto tiver a classe da categoria, mostramos; senão escondemos
+            if(produto.classList.contains(categoria)) {
+                produto.style.display = 'block';
+            } else {
+                produto.style.display = 'none';
+            }
+        }
+    });
+}
