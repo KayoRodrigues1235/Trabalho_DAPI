@@ -28,53 +28,12 @@
                     <img src="/code/img/perto.png" class="cancelar" alt="Fechar">
                 </button>
 
-                <!--Menu com varias opições-->
-                <div class="dropdown">
-                    <span class="toggle" role="button" tabindex="0" aria-expanded="false">
-                        Promoções
-                        <i class="fa fa-caret-down"></i>
-                    </span>
-                    <div class="conten">
-                        <a href="#">Festas</a>
-                        <a href="#">Bolos</a>
-                        <a href="#">Doces</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <span class="toggle" role="button" tabindex="0" aria-expanded="false">
-                        Combos
-                        <i class="fa fa-caret-down"></i>
-                    </span>
-                    <div class="conten">
-                        <a href="#">Segunda</a>
-                        <a href="#">Terça</a>
-                        <a href="#">Quarta</a>
-                        <a href="#">Quinta</a>
-                        <a href="#">Sexta</a>
-                        <a href="#">Sabado</a>
-                        <a href="#">Domingo</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <span class="toggle" role="button" tabindex="0" aria-expanded="false">
-                        Festas
-                        <i class="fa fa-caret-down"></i>
-                    </span>
-                    <div class="conten">
-                        <a href="#">Doces</a>
-                        <a href="#">Tortas</a>
-                        <a href="#">Bolos</a>
-                    </div>
-                </div>
-
                 <!--Tabela que faz o filtro dos produtos-->
                 <div class="filtros dropdown">
-                    <button onclick="filtrar('todos')">Todos</button>
-                    <button onclick="filtrar('bolo')">Bolos</button>
-                    <button onclick="filtrar('combo')">Combos</button>
-                    <button onclick="filtrar('promocao')">Promocao</button>
+                    <button class="toggle" onclick="filtrar('todos')">Todos</button>
+                    <button class="toggle" onclick="filtrar('bolo')">Bolos</button>
+                    <button class="toggle" onclick="filtrar('combo')">Combos</button>
+                    <button class="toggle" onclick="filtrar('promocao')">Promocao</button>
                 </div>
             </div>
         </div>
@@ -105,7 +64,7 @@
                     alt="Bolo de Chocolate" class="imagemProduto">
                 <h3>Bolo de Chocolate</h3>
                 <p>Donuts com cobertura colorida e sabores variados</p>
-                <p>R$ 30,00</p>
+                <div class="preco">R$ 30,00</div>
                 <button class="adicionar-carrinho" data-id="1" data-nome="Bolo de Chocolate" data-preco="30.00">Adicionar ao
                     Carrinho</button>
             </div>
@@ -129,7 +88,7 @@
                     alt="Combo Festa" class="imagemProduto">
                 <h3>Combo Festa</h3>
                 <p>Cupcake com massa fofinha e cobertura especial</p>
-                <p>R$ 80,00</p>
+                <div class="preco">R$ 80,00</div>
                 <button class="adicionar-carrinho" data-id="3" data-nome="Combo Festa" data-preco="80.00">Adicionar ao
                     Carrinho</button>
             </div>
@@ -141,7 +100,7 @@
                     alt="Combo Pequeno" class="imagemProduto">
                 <h3>Combo Pequeno</h3>
                 <p>12 brigadeiros gourmet com sabores variados</p>
-                <p>R$ 50,00</p>
+                <div class="preco">R$ 50,00</div>
                 <button class="adicionar-carrinho" data-id="4" data-nome="Combo Pequeno" data-preco="50.00">Adicionar ao
                     Carrinho</button>
             </div>
@@ -153,7 +112,7 @@
                     class="imagemProduto">
                 <h3>Promoçao</h3>
                 <p>Torta cremosa com morangos frescos e chantilly</p>
-                <p>R$ 20,00</p>
+                <div class="preco">R$ 20,00</div>
                 <button class="adicionar-carrinho" data-id="5" data-nome="Promocao" data-preco="20.00">Adicionar ao
                     Carrinho</button>
             </div>
