@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    <title>LOJA DE DOCES</title>
+    <link rel="shortcut icon" href="/img/bolo-de-casamento.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/code/style/style_loja.css">
+</head>
+<body>
+     <div class="container">
+        <div class="menuLinks">
+            <!-- Ícone de menu que abre/fecha a tabela -->
+            <button id="abrir" onclick="alternarMenu()">
+                <img src="/code/img/menu-aberto.png" class="menusinho" alt="Menu">
+            </button>
+
+            <!-- Tabela que aparece como menu lateral -->
+            <div id="tabela" class="textosLinks">
+                <button id="fechar" class="fechar-btn" onclick="fecharMenu()">
+                    <img src="/code/img/perto.png" class="cancelar" alt="Fechar">
+                </button>
+
+                <!--Menu com varias opições-->
+                <div class="dropdown">
+                    <span class="toggle" role="button" tabindex="0" aria-expanded="false">
+                        Promoções
+                        <i class="fa fa-caret-down"></i>
+                    </span>
+                    <div class="conten">
+                        <a href="#">Festas</a>
+                        <a href="#">Bolos</a>
+                        <a href="#">Doces</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <span class="toggle" role="button" tabindex="0" aria-expanded="false">
+                        Combos
+                        <i class="fa fa-caret-down"></i>
+                    </span>
+                    <div class="conten">
+                        <a href="#">Segunda</a>
+                        <a href="#">Terça</a>
+                        <a href="#">Quarta</a>
+                        <a href="#">Quinta</a>
+                        <a href="#">Sexta</a>
+                        <a href="#">Sabado</a>
+                        <a href="#">Domingo</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <span class="toggle" role="button" tabindex="0" aria-expanded="false">
+                        Festas
+                        <i class="fa fa-caret-down"></i>
+                    </span>
+                    <div class="conten">
+                        <a href="#">Doces</a>
+                        <a href="#">Tortas</a>
+                        <a href="#">Bolos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="/code/img/bolo-de-casamento.png" class="logo" alt="Logo da loja">
+
+        <div class="direita">
+            <div class="menuLoja">
+                <a href="/code/index.html">Home</a>
+                <a href="/code/pages/suporte.html">Contato</a>
+            </div>
+
+            <div class="carrinho-loja" id="abrir-carrinho">
+                <img src="/code/img/vista-lateral-vazia-do-carrinho-de-compras.png" class="carrinho" alt="Carrinho de compras">
+                <div class="contador-carrinho" id="contador-carrinho">0</div>
+                <h2>Carrinho</h2>
+            </div> 
+        </div>  
+    </div>
+
+    <div class="produtoGrid">
+        <div class="produto">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.AP5_Uh5AFt3ycioN-GQsOwHaEp?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bolo de Chocolate" class="imagemProduto">
+            <h3>Bolo de Chocolate</h3>
+            <p>Delicioso bolo de chocolate com recheio e cobertura</p>
+            <div class="preco">R$ 45,90</div>
+            <button class="adicionar-carrinho" data-id="1" data-nome="Bolo de Chocolate" data-preco="45.90">Adicionar ao Carrinho</button>
+        </div>
+        
+        <div class="produto">
+            <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Cupcake" class="imagemProduto">
+            <h3>Cupcake Gourmet</h3>
+            <p>Cupcake com massa fofinha e cobertura especial</p>
+            <div class="preco">R$ 8,50</div>
+            <button class="adicionar-carrinho" data-id="2" data-nome="Cupcake Gourmet" data-preco="8.50">Adicionar ao Carrinho</button>
+        </div>
+        
+        <div class="produto">
+            <img src="https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Donuts" class="imagemProduto">
+            <h3>Donuts Coloridos</h3>
+            <p>Donuts com cobertura colorida e sabores variados</p>
+            <div class="preco">R$ 7,90</div>
+            <button class="adicionar-carrinho" data-id="3" data-nome="Donuts Coloridos" data-preco="7.90">Adicionar ao Carrinho</button>
+        </div>
+        
+        <div class="produto">
+            <img src="https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Torta de Morango" class="imagemProduto">
+            <h3>Torta de Morango</h3>
+            <p>Torta cremosa com morangos frescos e chantilly</p>
+            <div class="preco">R$ 32,90</div>
+            <button class="adicionar-carrinho" data-id="4" data-nome="Torta de Morango" data-preco="32.90">Adicionar ao Carrinho</button>
+        </div>
+        
+        <div class="produto">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.CP8ylQhcmQ5WbSJu60bWGwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brigadeiros" class="imagemProduto">
+            <h3>Caixa de Brigadeiros</h3>
+            <p>12 brigadeiros gourmet com sabores variados</p>
+            <div class="preco">R$ 24,90</div>
+            <button class="adicionar-carrinho" data-id="5" data-nome="Caixa de Brigadeiros" data-preco="24.90">Adicionar ao Carrinho</button>
+        </div>
+        
+        <div class="produto">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.1vjQsPJMXsOyx4VPxAoY7wHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bolo de Festa" class="imagemProduto">
+            <h3>Bolo de Aniversário</h3>
+            <p>Bolo temático para festas com personalização</p>
+            <div class="preco">R$ 89,90</div>
+            <button class="adicionar-carrinho" data-id="6" data-nome="Bolo de Aniversário" data-preco="89.90">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="carrinho-modal" id="carrinho">
+        <button class="fechar-carrinho" id="fechar-carrinho">
+            <i class="fa fa-times"></i>
+        </button>
+        <h2><i class="fa fa-shopping-cart"></i> Seu Carrinho</h2>
+        <div class="carrinho-itens" id="carrinho-itens">
+            <p class="carrinho-vazio">Seu carrinho está vazio</p>
+        </div>
+        <div class="carrinho-total" id="carrinho-total">Total: R$ 0,00</div>
+        <button class="confirmar-compra" id="confirmar-compra" disabled>
+            <i class="fa fa-check-circle"></i> Confirmar Compra
+        </button>
+    </div>
+    
+    <div class="compra-confirmada" id="compra-confirmada">
+        <h3>Compra Confirmada!</h3>
+        <p>Obrigado por sua compra. Em breve você receberá um e-mail com os detalhes do pedido e informações de entrega.</p>
+        <button id="fechar-confirmacao">Continuar Comprando</button>
+    </div>
+
+
+
+    <script src="/code/scripts/script_loja.js"></script>
+</body>
+</html>

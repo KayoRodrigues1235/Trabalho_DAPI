@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte</title>
+    <link rel="stylesheet" href="/code/style/styleSuporte.css">
+    <link rel="shortcut icon" href="/img/suporte.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/code/img/suporte-ao-cliente.gif" class="suporteImagem">
+        </div>
+
+        <div class="texto">
+            <h2>SUPORTE</h2>
+
+            <form>
+                <label for="email" class="email">Email</label>
+                <input type="email" name="email" id="email" class="inputsSuporte" placeholder="exemplo@gmail.com" required>
+
+                <label for="duvida">Duvida</label>
+                <textarea name="duvida" id="duvidas" class="duvidasw" rows="4" required></textarea>
+
+                <div class="botoes">
+                <button type="submit" id="envio" class="aceitar" onclick="enviar(event)">Enviar</button>
+                <button class="cancelar" onclick="history.back()">Cancelar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/code/scripts/scriptSuporte.js"></script>
+</body>
+</html>
