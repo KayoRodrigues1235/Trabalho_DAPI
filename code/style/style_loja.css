@@ -10,6 +10,10 @@
             min-height: 100vh;
         }
 
+        h1{
+            color: white;
+        }
+
         /* Container principal */
         .container {
             display: flex;

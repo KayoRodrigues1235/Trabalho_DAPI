@@ -16,6 +16,44 @@
 
 <body>
     <div class="container">
+        <header>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="logo">
+                <span class="logo-icon"></span>
+                <span class="logo-text">Logo</span>
+            </div>
+            
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </header>
+        
+        <div class="side-menu" id="sideMenu">
+            <div class="menu-header">
+                <h2 class="menu-title">Menu</h2>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="menu-nav">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#"><i class="fas fa-birthday-cake"></i> Bolos</a></li>
+                    <li><a href="#"><i class="fas fa-cookie"></i> Doces do dia</a></li>
+                    <li><a href="#"><i class="fas fa-cupcake"></i> Doces</a></li>
+                    <li><a href="#"><i class="fas fa-gift"></i> Encomendas</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Sobre Nós</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="overlay" id="overlay"></div>
+
         <div class="menuLinks">
             <!-- Ícone de menu que abre/fecha a tabela -->
             <button id="abrir" onclick="alternarMenu()">
@@ -30,8 +68,9 @@
 
                 <!--Tabela que faz o filtro dos produtos-->
                 <div class="filtros dropdown">
+                    <h1>MENU</h1>
                     <button class="toggle" onclick="filtrar('todos')">Todos</button>
-                    <button class="toggle" onclick="filtrar('bolo')">Bolos</button>
+                    <button class="toggle" onclick="filtrar('festa')">Festa</button>
                     <button class="toggle" onclick="filtrar('combo')">Combos</button>
                     <button class="toggle" onclick="filtrar('promocao')">Promocao</button>
                 </div>
@@ -59,7 +98,7 @@
     <div class="produtos">
         <div class="produtoGrid">
             <!--Cada produto: produto1-->
-            <div class="produto bolo">
+            <div class="produto festa">
                 <img src="https://tse4.mm.bing.net/th/id/OIP.AP5_Uh5AFt3ycioN-GQsOwHaEp?rs=1&pid=ImgDetMain&o=7&rm=3"
                     alt="Bolo de Chocolate" class="imagemProduto">
                 <h3>Bolo de Chocolate</h3>
@@ -71,7 +110,7 @@
         </div>
         <!--Cada produto: produto2-->
         <div class="produtoGrid">
-            <div class="produto bolo">
+            <div class="produto festa">
                 <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
                     alt="Bolo de Morango" class="imagemProduto">
                 <h3>Bolo de Morango</h3>
@@ -86,10 +125,10 @@
             <div class="produto combo">
                 <img src="https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
                     alt="Combo Festa" class="imagemProduto">
-                <h3>Combo Festa</h3>
+                <h3>Donuts</h3>
                 <p>Cupcake com massa fofinha e cobertura especial</p>
-                <div class="preco">R$ 80,00</div>
-                <button class="adicionar-carrinho" data-id="3" data-nome="Combo Festa" data-preco="80.00">Adicionar ao
+                <div class="preco">R$ 32,50</div>
+                <button class="adicionar-carrinho" data-id="3" data-nome="Donuts" data-preco="32.50">Adicionar ao
                     Carrinho</button>
             </div>
         </div>
@@ -110,10 +149,22 @@
             <div class="produto promocao">
                 <img src="https://tse2.mm.bing.net/th/id/OIP.CP8ylQhcmQ5WbSJu60bWGwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
                     class="imagemProduto">
-                <h3>Promoçao</h3>
-                <p>Torta cremosa com morangos frescos e chantilly</p>
-                <div class="preco">R$ 20,00</div>
-                <button class="adicionar-carrinho" data-id="5" data-nome="Promocao" data-preco="20.00">Adicionar ao
+                <h3>Brigadeiro</h3>
+                <p>4 brigadeiros gourmet com sabores variados</p>
+                <div class="preco">R$ 5,00</div>
+                <button class="adicionar-carrinho" data-id="5" data-nome="Brigadeiro" data-preco="5.00">Adicionar ao
+                    Carrinho</button>
+            </div>
+        </div>
+
+         <div class="produtoGrid">
+            <div class="produto promocao">
+                <img src="/code/img/6b0d1a17-d66a-440e-b63f-df0eb26d7227.jpeg"
+                    class="imagemProduto">
+                <h3>Morango do Amor</h3>
+                <p>Morango do amor para adocicar sua boca</p>
+                <div class="preco">R$ 25,00</div>
+                <button class="adicionar-carrinho" data-id="6" data-nome="Morango do Amor" data-preco="25.00">Adicionar ao
                     Carrinho</button>
             </div>
         </div>
@@ -138,7 +189,7 @@
 
     <div class="compra-confirmada" id="compra-confirmada">
         <h3>Compra Confirmada!</h3>
-        <p>Obrigado por sua compra. Em breve você receberá um e-mail com os detalhes do pedido e informações de entrega.
+        <p>Compra Confirmada! Obrigado por comprar na nossa doceria!
         </p>
         <button id="fechar-confirmacao">Continuar Comprando</button>
     </div>
