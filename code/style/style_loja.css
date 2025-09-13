@@ -8,10 +8,17 @@
             font-family: "Luckiest Guy", cursive;
             background-color: rgb(208, 136, 173);
             min-height: 100vh;
+            border-radius: 20px;
         }
 
         h1{
             color: white;
+        }
+
+        .contam{
+            width: 90%;
+            margin: auto;
+            height: 50px;
         }
 
         /* Container principal */
@@ -21,14 +28,18 @@
             justify-content: space-between;
             background-color: pink;
             padding: 20px;
-            height: 200px;
+            margin-top: 20px;
+            height: 100px;
             position: relative;
+            border-radius: 20px;
         }
 
         .direita{
             display: flex;
             text-align: center;
         }
+
+        
 
         .menusinho{
             width: 100%;
@@ -39,7 +50,7 @@
         /* Logo */
         .logo {
             width: 150px;
-            max-width: 20%;
+            max-width: 8%;
         }
 
         .menuLoja{
@@ -584,6 +595,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .produto {
@@ -595,7 +608,7 @@
 
 .produto img {
     width: 100%;
-    height: 120px;
+    height: 400px;
 }
 
 .filtros {

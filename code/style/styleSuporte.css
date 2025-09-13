@@ -10,6 +10,10 @@
   font-style: normal;
 }
 
+.logo{
+    width: 100%;
+}
+
 body{
     background-color: rgb(240, 173, 251);
 }
@@ -26,6 +30,7 @@ body{
     width: 80%;
     height: 100%;
     margin-top: 20px;
+    border-radius: 20px;
 }
 
 h2{
@@ -48,6 +53,9 @@ form{
     flex-direction: column;
     width: 100%;
     gap: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 label{
@@ -71,12 +79,14 @@ h3{
 .botoes{
     display: flex;
     gap: 80px;
-    margin: 40px 0 0 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 button{
     font-size: 20px;
-    padding: 18px 60px;
+    padding: 18px 50px;
 }
 
 .duvidasw{

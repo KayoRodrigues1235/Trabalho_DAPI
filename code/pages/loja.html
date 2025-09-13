@@ -15,9 +15,9 @@
 </head>
 
 <body>
+<div class="contam">
     <div class="container">
-
-        <div class="menuLinks">
+        <header class="menuLinks">
             <!-- Ícone de menu que abre/fecha a tabela -->
             <button id="abrir" onclick="alternarMenu()">
                 <img src="/code/img/menu-aberto.png" class="menusinho" alt="Menu">
@@ -38,7 +38,7 @@
                     <button class="toggle" onclick="filtrar('promocao')">Promocao</button>
                 </div>
             </div>
-        </div>
+        </header>
 
         <img src="/code/img/bolo-de-casamento.png" class="logo" alt="Logo da loja">
 
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-
+            <div class="overlay" id="overlay"></div>
     <!-- Lista de produtos com filtragem-->
     <div class="produtos">
         <div class="produtoGrid">
@@ -98,7 +98,7 @@
         <!--Cada produto: produto4-->
         <div class="produtoGrid">
             <div class="produto combo">
-                <img src="https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                <img src="https://i.pinimg.com/736x/d3/e1/be/d3e1be49df5839551ea9155a0d1a1578.jpg"
                     alt="Combo Pequeno" class="imagemProduto">
                 <h3>Combo Pequeno</h3>
                 <p>12 brigadeiros gourmet com sabores variados</p>
@@ -134,8 +134,6 @@
     </div>
     </div>
 
-    <div class="overlay" id="overlay"></div>
-
     <div class="carrinho-modal" id="carrinho">
         <button class="fechar-carrinho" id="fechar-carrinho">
             <i class="fa fa-times"></i>
@@ -156,6 +154,7 @@
         </p>
         <button id="fechar-confirmacao">Continuar Comprando</button>
     </div>
+</div>
 
 
 
