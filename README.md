@@ -1,5 +1,7 @@
 # Trabalho de Desenvolvimento de Aplicação Interna - DAPI  
 
+![Badge](https://img.shields.io/badge/Status:-em_desenvolvimento-green)
+
 Este repositório apresenta o resultado de um trabalho realizado em equipe no âmbito da disciplina **Desenvolvimento de Aplicação Interna (DAPI)**.  
 O objetivo principal foi compreender o processo de **planejamento e construção de uma página web**.  
 
