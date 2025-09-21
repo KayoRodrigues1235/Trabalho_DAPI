@@ -123,10 +123,16 @@
         }
 
         /*Produtos*/
-        .produtoGrid{
-            display: grid;
-            padding: 10px;
-        }
+        .produtoGrid {
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.produtoGrid:only-child,
+.produtoGrid:has(.produto:only-child) {
+    justify-items: center;
+}
         
         .produto {
             background-color: white;
