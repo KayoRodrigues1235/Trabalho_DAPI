@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joana - Confeitaria</title>
+    <title>Joana - Doces</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>
-    <div class="container">
+    <div class="main-container">
         <header>
             <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            
+
             <div class="logo">
-                <span class="logo-icon"></span>
-                <span class="logo-text">Logo</span>
+                <img src="resource/logo-removebg-preview.png" alt="Joana Doces" class="logo-img">
+                <span class="logo-text">Joana Doces</span>
             </div>
-            
+
+            <div class="contact-info">
+                <a href="tel:+551199999999" class="phone-link">
+                    <i class="fas fa-phone"></i>
+                    <span>(11) 9999-9999</span>
+                </a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar doces, bolos..." aria-label="Buscar produtos">
+                <button type="submit" aria-label="Pesquisar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#" class="user-icon" aria-label="Minha conta">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="wishlist-icon" aria-label="Favoritos">
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+
             <div class="cart-icon" id="cartIcon">
                 <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
             </div>
         </header>
-        
+
         <div class="side-menu" id="sideMenu">
             <div class="menu-header">
                 <h2 class="menu-title">Menu</h2>
@@ -31,7 +57,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <nav class="menu-nav">
                 <ul>
                     <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
@@ -44,34 +70,37 @@
                 </ul>
             </nav>
         </div>
-        
+
         <div class="overlay" id="overlay"></div>
-        
+
         <div class="content">
             <!-- Carrossel -->
             <section class="carousel-section">
                 <div class="carousel-container">
                     <div class="carousel">
                         <div class="carousel-slide active">
-                            <img src="https://images.unsplash.com/photo-1558319024-50a6119e4327?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Bolos decorados">
+                            <img src="https://images.unsplash.com/photo-1558319024-50a6119e4327?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+                                alt="Bolos decorados">
                             <div class="slide-content">
-                                <h2>Bolos Artesanais</h2>
-                                <p>Deliciosos bolos feitos com ingredientes selecionados</p>
+                                <h2>Mais vendidos</h2>
+                                <p>Confira os queridinhos da galera</p>
                                 <a href="#" class="btn">Ver Mais</a>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Cupcakes coloridos">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+                                alt="Cupcakes coloridos">
                             <div class="slide-content">
-                                <h2>Cupcakes Divertidos</h2>
+                                <h2>Doces do dia</h2>
                                 <p>Sabores incríveis para todas as ocasiões</p>
                                 <a href="#" class="btn">Ver Mais</a>
                             </div>
                         </div>
                         <div class="carousel-slide">
-                            <img src="https://images.unsplash.com/photo-1586788680434-30d8b2a0655d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Docinhos finos">
+                            <img src="https://images.unsplash.com/photo-1586788680434-30d8b2a0655d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+                                alt="Docinhos finos">
                             <div class="slide-content">
-                                <h2>Doces Finos</h2>
+                                <h2>Sem ideia</h2>
                                 <p>Sobremesas elegantes para momentos especiais</p>
                                 <a href="#" class="btn">Ver Mais</a>
                             </div>
@@ -86,9 +115,212 @@
                     <div class="carousel-indicators" id="indicators"></div>
                 </div>
             </section>
-            
-            <script src="scripts/script.js"></script>
+
+            <!-- Seção Doce do Dia -->
+            <section class="daily-special">
+                <h2 class="section-title">Doce do Dia</h2>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <h3>Cardápio da Semana</h3>
+                            <p>Confira nosso doce especial de cada dia!</p>
+                        </div>
+                        <div class="week-days">
+                            <div class="day" data-day="domingo">
+                                <h4>Domingo</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1621293385250-9a4be4c5d988?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Pudim de Leite</h5>
+                                    <p>R$ 8,00</p>
+                                </div>
+                            </div>
+                            <div class="day" data-day="segunda">
+                                <h4>Segunda</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Murango do amor</h5>
+                                    <p>R$ 99,00</p>
+                                </div>
+                            </div>
+                            <div class="day" data-day="terca">
+                                <h4>Terça</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Brigadeiro Gourmet</h5>
+                                    <p>R$ 4,50</p>
+                                </div>
+                            </div>
+                            <div class="day" data-day="quarta">
+                                <h4>Quarta</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Beijinho</h5>
+                                    <p>R$ 3,50</p>
+                                </div>
+                            </div>
+                            <div class="day" data-day="quinta">
+                                <h4>Quinta</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Bolo de Cenoura</h5>
+                                    <p>R$ 10,00</p>
+                                </div>
+                            </div>
+                            <div class="day" data-day="sexta">
+                                <h4>Sexta</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Cookie Caseiro</h5>
+                                    <p>R$ 5,00</p>
+                                </div>
+                            </div>
+                            <div class="day" data-day="sabado">
+                                <h4>Sábado</h4>
+                                <div class="dessert-info">
+                                    <div class="dessert-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1626082895616-3c6b86dd1f89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80')">
+                                    </div>
+                                    <h5>Torta de Limão</h5>
+                                    <p>R$ 15,00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="current-day-highlight">
+                            <p>Hoje é <span id="current-day-name">Segunda-feira</span>! O doce do dia é: <span
+                                    id="today-special">Bolo de Chocolate</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sessao de produtos -->
+            <section class="products-section">
+                <h2 class="section-title">Nossos Produtos</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Bolo de chocolate" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Bolo de Chocolate</h3>
+                            <p class="product-price">R$ 45,00</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1519869325930-281384150729?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Cupcake morango" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Cupcake de Morango</h3>
+                            <p class="product-price">R$ 8,00</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Brigadeiro" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Brigadeiro Gourmet</h3>
+                            <p class="product-price">R$ 3,50</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Torta de limão" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Torta de Limão</h3>
+                            <p class="product-price">R$ 35,00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products-section">
+                <h2 class="section-title">Doces Tradicionais</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Beijinho" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Beijinho</h3>
+                            <p class="product-price">R$ 3,00</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Bolo de cenoura" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Bolo de Cenoura</h3>
+                            <p class="product-price">R$ 40,00</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Cookie" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Cookie Caseiro</h3>
+                            <p class="product-price">R$ 5,00</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1626082895616-3c6b86dd1f89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                            alt="Pudim" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-title">Pudim de Leite</h3>
+                            <p class="product-price">R$ 25,00</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Joana Doces</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua dos Sabores, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (85) 4002-8922</p>
+                    <p><i class="fas fa-envelope"></i> contato@joanadoces.com.br</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda a Sexta: 8h às 19h</p>
+                    <p>Sábado: 8h às 18h</p>
+                    <p>Domingo: 9h às 13h</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Joana Doces - Todos os direitos reservados</p>
+            </div>
+        </footer>
+
     </div>
+    <script src="scripts/script.js"></script>
 </body>
+
 </html>
