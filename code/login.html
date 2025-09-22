@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Joana Doces</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="logo">
+                <a href="index.html">
+                    <img src="resource/new-logo-removebg-preview.png" alt="Joana Doces" class="logo-img">
+                </a>
+                <span class="logo-text">Joana Doces</span>
+            </div>
+
+            <div class="contact-info">
+                <a href="tel:+5585994512723" class="phone-link">
+                    <i class="fas fa-phone"></i>
+                    <span>(11) 94002-8922</span>
+                </a>
+                <a href="https://wa.me/55994512723" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar doces, bolos..." aria-label="Buscar produtos">
+                <button type="submit" aria-label="Pesquisar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="mobile-search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="user-actions">
+                <a href="login.html" class="user-icon" aria-label="Minha conta">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" class="wishlist-icon" aria-label="Favoritos">
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+            
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </header>
+        
+        <div class="side-menu" id="sideMenu">
+           <div class="menu-header">
+                <h2 class="menu-title">Menu</h2>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="menu-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="#"><i class="fas fa-birthday-cake"></i> Bolos</a></li>
+                    <li><a href="#"><i class="fas fa-cookie"></i> Doces do dia</a></li>
+                    <li><a href="#"><i class="fas fa-cupcake"></i> Doces</a></li>
+                    <li><a href="#"><i class="fas fa-gift"></i> Encomendas</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Sobre Nós</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="overlay" id="overlay"></div>
+        
+        <div class="content">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="register">Cadastro</button>
+                </div>
+
+                <div class="auth-forms">
+                    <!-- Formulário de Login -->
+                    <form id="login-form" class="auth-form active">
+                        <h2>Bem-vindo de volta!</h2>
+                        
+                        <div class="form-group">
+                            <label for="login-email">E-mail</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Senha</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" placeholder="Sua senha" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="remember-me">
+                                <span class="checkmark"></span>
+                                Lembrar-me
+                            </label>
+                            <a href="#" class="forgot-password">Esqueci minha senha</a>
+                        </div>
+
+                        <button type="submit" class="auth-btn">Entrar</button>
+
+                        <div class="auth-divider">
+                            <span>ou</span>
+                        </div>
+
+                        <button type="button" class="social-btn google-btn">
+                            <i class="fab fa-google"></i>
+                            Entrar com Google
+                        </button>
+
+                        <button type="button" class="social-btn facebook-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            Entrar com Facebook
+                        </button>
+                    </form>
+
+                    <!-- Formulário de Cadastro -->
+                    <form id="register-form" class="auth-form">
+                        <h2>Crie sua conta</h2>
+                        
+                        <div class="form-group">
+                            <label for="register-name">Nome completo</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="register-name" placeholder="Seu nome completo" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-email">E-mail</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="register-email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-phone">Telefone</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="register-phone" placeholder="(11) 99999-9999" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-password">Senha</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="register-password" placeholder="Crie uma senha" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                                <span class="strength-text">Força da senha</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-confirm-password">Confirmar senha</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="register-confirm-password" placeholder="Confirme sua senha" required>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="accept-terms" required>
+                                <span class="checkmark"></span>
+                                Aceito os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="auth-btn">Criar conta</button>
+
+                        <div class="auth-divider">
+                            <span>ou</span>
+                        </div>
+
+                        <button type="button" class="social-btn google-btn">
+                            <i class="fab fa-google"></i>
+                            Cadastrar com Google
+                        </button>
+
+                        <button type="button" class="social-btn facebook-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            Cadastrar com Facebook
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 /* BG do site com padrão temático */
 body {
     background-color: #fff5f7;
-    background-image: 
+    background-image:
         radial-gradient(#f8bbd0 1.5px, transparent 1.5px),
         radial-gradient(#f48fb1 1.5px, transparent 1.5px);
     background-size: 60px 60px;
@@ -659,9 +659,308 @@ header {
     .cart-container {
         grid-template-columns: 1fr;
     }
-    
+
     .cart-summary {
         position: static;
+    }
+}
+
+/* Estilos para autenticação */
+.auth-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 20px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: #ec407a;
+    border-bottom: 3px solid #ec407a;
+}
+
+.tab-btn:hover {
+    background-color: #fff5f7;
+}
+
+.auth-forms {
+    padding: 30px;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.auth-form h2 {
+    color: #7e1c40;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #7e1c40;
+    font-weight: 600;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    color: #f48fb1;
+    z-index: 1;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-with-icon input:focus {
+    border-color: #f48fb1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 143, 177, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.password-strength {
+    margin-top: 8px;
+}
+
+.strength-bar {
+    height: 5px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.strength-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #ff6b6b;
+    transition: width 0.3s ease;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input:checked+.checkmark {
+    background: #ec407a;
+    border-color: #ec407a;
+}
+
+.checkbox-container input:checked+.checkmark::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.forgot-password {
+    color: #ec407a;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #f48fb1 0%, #ec407a 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(236, 64, 122, 0.3);
+}
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #f0f0f0;
+}
+
+.auth-divider span {
+    background: white;
+    padding: 0 15px;
+    color: #666;
+    position: relative;
+    z-index: 1;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    background: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-btn:hover {
+    border-color: #f48fb1;
+    transform: translateY(-1px);
+}
+
+.google-btn {
+    color: #666;
+}
+
+.facebook-btn {
+    color: #1877f2;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 20px;
+    }
+
+    .auth-forms {
+        padding: 20px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .tab-btn {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        margin: 10px;
+    }
+
+    .auth-forms {
+        padding: 15px;
+    }
+
+    .auth-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-with-icon input {
+        padding: 12px 12px 12px 40px;
     }
 }
 
@@ -671,7 +970,7 @@ header {
         gap: 10px;
         text-align: center;
     }
-    
+
     .item-quantity,
     .item-total,
     .remove-item {
@@ -679,7 +978,7 @@ header {
         justify-self: center;
         margin-top: 10px;
     }
-    
+
     .item-image img {
         width: 60px;
         height: 60px;
@@ -690,7 +989,7 @@ header {
     .cart-page {
         padding: 15px;
     }
-    
+
     .page-title {
         font-size: 1.8rem;
     }
@@ -701,11 +1000,11 @@ header {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .footer-section p {
         justify-content: center;
     }
-    
+
     .social-icons {
         justify-content: center;
     }
@@ -781,40 +1080,40 @@ header {
     body {
         padding: 20px 15px;
     }
-    
+
     .main-container {
         min-height: calc(100vh - 40px);
     }
-    
+
     header {
         padding: 12px 20px;
     }
-    
+
     .logo-img {
         height: 40px;
     }
-    
+
     .logo-text {
         font-size: 1.3rem;
     }
-    
+
     .carousel {
         height: 400px;
     }
-    
+
     .slide-content h2 {
         font-size: 1.8rem;
     }
-    
+
     .slide-content p {
         font-size: 1rem;
     }
-    
+
     .carousel-control {
         width: 40px;
         height: 40px;
     }
-    
+
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
@@ -941,7 +1240,7 @@ header {
     .week-days {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .day:nth-child(2n) {
         border-right: none;
     }
@@ -951,11 +1250,11 @@ header {
     .week-days {
         grid-template-columns: 1fr;
     }
-    
+
     .day {
         border-right: none;
     }
-    
+
     .dessert-image {
         width: 60px;
         height: 60px;
@@ -966,56 +1265,56 @@ header {
     body {
         padding: 15px 10px;
     }
-    
+
     .main-container {
         min-height: calc(100vh - 30px);
         border-radius: 15px;
     }
-    
+
     header {
         padding: 10px 15px;
     }
-    
+
     .logo-text {
         display: none;
     }
-    
+
     .carousel {
         height: 300px;
     }
-    
+
     .slide-content {
         padding: 15px;
     }
-    
+
     .slide-content h2 {
         font-size: 1.4rem;
     }
-    
+
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
     }
-    
+
     .carousel-control {
         width: 35px;
         height: 35px;
         font-size: 1rem;
     }
-    
+
     .carousel-indicators .indicator {
         width: 10px;
         height: 10px;
     }
-    
+
     .product-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .section-title {
         font-size: 1.6rem;
     }
 
-    
+
 }
