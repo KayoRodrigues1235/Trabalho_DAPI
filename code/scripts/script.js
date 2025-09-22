@@ -129,6 +129,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('DOMContentLoaded', highlightCurrentDay);
 
+    document.getElementById('cartIcon').addEventListener('click', function() {
+    window.location.href = 'cart.html';
+
+    document.querySelector('.user-icon').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'login.html';
+});
+});
     nextBtn.addEventListener('click', () => {
         nextSlide();
         resetInterval();
