@@ -25,12 +25,19 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(240, 173, 251);
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #fff5f7;
+    background-image:
+        radial-gradient(#f8bbd0 1.5px, transparent 1.5px),
+        radial-gradient(#f48fb1 1.5px, transparent 1.5px);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    min-height: 100vh;
+    padding: 30px 20px;
 }
 
 .container {

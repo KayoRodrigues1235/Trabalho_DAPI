@@ -226,3 +226,32 @@ function filtrar(categoria) {
         }
     });
 }
+
+function filtrar(categoria) {
+    const produtos = document.querySelectorAll(".produto");
+    produtos.forEach(produto => {
+        if (categoria === "todos") {
+            produto.style.display = "block";
+        } else {
+            produto.style.display = produto.classList.contains(categoria) ? "block" : "none";
+        }
+    });
+}
+
+// === BUSCA PELO INPUT === //
+const searchInput = document.querySelector(".search-bar input");
+
+searchInput.addEventListener("input", () => {
+    const termo = searchInput.value.toLowerCase();
+    const produtos = document.querySelectorAll(".produto");
+
+    produtos.forEach(produto => {
+        const nome = produto.querySelector("h3").textContent.toLowerCase();
+        const descricao = produto.querySelector("p").textContent.toLowerCase();
+        if (nome.includes(termo) || descricao.includes(termo)) {
+            produto.style.display = "block";
+        } else {
+            produto.style.display = "none";
+        }
+    });
+});
