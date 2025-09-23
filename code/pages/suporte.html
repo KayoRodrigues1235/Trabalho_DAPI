@@ -1,41 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte</title>
-    <link rel="stylesheet" href="/code/style/styleSuporte.css">
-    <link rel="shortcut icon" href="/img/suporte.png" type="image/x-icon">
+    <title>Suporte - Joana Doces</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/styleSuporte.css">
+    <link rel="shortcut icon" href="https://placehold.co/32x32/pink/white?text=JD" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
 </head>
-
 <body>
-    <div class="container">
-        <div class="texto">
-            <h2><i>CONTATO</i></h2>
+    <div class="main-container">
+        <div class="overlay" id="overlay"></div>
+        
+        <div class="content">
+            <div class="support-container">
+                <div class="support-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-headset"></i>
+                        Fale Conosco
+                    </h1>
+                    <p class="support-subtitle">Estamos aqui para ajudar! Entre em contato conosco.</p>
 
-            <form>
-                <label>Email</label>
-                <input type="email" name="email" id="email" class="inputsSuporte" placeholder="exemplo@gmail.com" required>
+                    <form class="support-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                E-mail
+                            </label>
+                            <input type="email" name="email" id="email" class="form-input" placeholder="exemplo@gmail.com" required>
+                        </div>
 
-                <label>Dúvida</label>
-                <textarea name="duvida" placeholder="Escreva sua pergunta aqui..." id="duvidas" class="duvidasw" rows="4" required></textarea>
+                        <div class="form-group">
+                            <label for="duvida" class="form-label">
+                                <i class="fas fa-question-circle"></i>
+                                Sua Mensagem
+                            </label>
+                            <textarea name="duvida" id="duvida" class="form-textarea" placeholder="Escreva sua dúvida ou mensagem aqui..." rows="6" required></textarea>
+                        </div>
 
-                <div class="botoes">
-                    <button type="submit" id="envio" class="aceitar enviar" onclick="enviar(event)">Enviar</button>
-                    <button class="cancelar" onclick="history.back()">Cancelar</button>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Mensagem
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="history.back()">
+                                <i class="fas fa-arrow-left"></i>
+                                Voltar
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="contact-info-section">
+                        <h3>Outras Formas de Contato</h3>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Telefone</strong>
+                                    <p>(11) 9999-9999</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <p>(11) 99999-9999</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>E-mail</strong>
+                                    <p>contato@joanadoces.com.br</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário de Atendimento</strong>
+                                    <p>Segunda a Sexta: 8h às 18h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
+    <script src="script.js"></script>
+    <script>
+        // Função para enviar o formulário
+        function enviarFormulario(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('duvida').value;
+            
+            // Simular envio
+            Swal.fire({
+                title: 'Mensagem Enviada!',
+                text: 'Obrigado pelo seu contato. Responderemos em breve!',
+                icon: 'success',
+                confirmButtonColor: '#ec407a',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                // Limpar formulário
+                document.getElementById('email').value = '';
+                document.getElementById('duvida').value = '';
+            });
+        }
 
-    <script src="/code/scripts/scriptSuporte.js"></script>
+        // Adicionar evento ao formulário
+        document.querySelector('.support-form').addEventListener('submit', enviarFormulario);
+    </script>
 </body>
-
 </html>

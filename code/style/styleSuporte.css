@@ -1,154 +1,227 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+/* Estilos para a página de suporte */
+.support-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-
-
-.noto-sans-<uniquifier> {
-    font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
-}
-
-.logo {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fff5f7;
-    background-image:
-        radial-gradient(#f8bbd0 1.5px, transparent 1.5px),
-        radial-gradient(#f48fb1 1.5px, transparent 1.5px);
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
-    min-height: 100vh;
-    padding: 30px 20px;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
-    padding: 30px 40px;
+.support-content {
+    background: white;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    width: 400px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    color: #7e1c40;
     text-align: center;
-}
-
-.container h2 {
-    font-size: 2rem;
-    color: #8a2be2;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.texto {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 80px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-    text-align: center;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-label {
-    font-size: 30px;
-    margin: auto;
+.page-title i {
+    color: #f48fb1;
 }
 
-input,
-textarea {
+.support-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.support-form {
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: #7e1c40;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-label i {
+    color: #f48fb1;
+    width: 20px;
+}
+
+.form-input, .form-textarea {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #ddd;
+    padding: 15px;
+    border: 2px solid #f0f0f0;
     border-radius: 10px;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: #f48fb1;
     outline: none;
-    transition: border 0.3s;
+    box-shadow: 0 0 0 3px rgba(244, 143, 177, 0.1);
 }
 
-input:focus,
-textarea:focus {
-    border-color: #8a2be2;
-    box-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
-.buttons {
+.form-buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-button {
-    flex: 1;
-    padding: 12px;
-    margin: 5px;
+.btn-primary {
+    background: linear-gradient(135deg, #f48fb1 0%, #ec407a 100%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 25px;
     font-size: 1rem;
     font-weight: 600;
-    border: none;
-    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.2s, opacity 0.3s;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-button:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(236, 64, 122, 0.3);
 }
 
-/* Botões específicos */
-.enviar {
-    background: linear-gradient(135deg, #28a745, #218838);
-    color: white;
+.btn-secondary {
+    background: white;
+    color: #7e1c40;
+    border: 2px solid #f48fb1;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.cancelar {
-    background: linear-gradient(135deg, #dc3545, #b02a37);
-    color: white;
+.btn-secondary:hover {
+    background: #fff5f7;
+    transform: translateY(-2px);
 }
 
-h3 {
-    font-size: 18px;
-    color: red;
-    text-align: right;
-    margin: 20px 70px;
+.contact-info-section {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 30px;
 }
 
-span {
-    color: white;
+.contact-info-section h3 {
+    color: #7e1c40;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
 }
 
-.inputsSuporte {
-    padding: 18px;
-    font-size: 20px;
-    font-family: "Noto Sans", sans-serif;
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.duvidasw {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 20px;
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #fff5f7;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-method i {
+    font-size: 1.5rem;
+    color: #ec407a;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+}
+
+.contact-method strong {
+    color: #7e1c40;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-method p {
+    color: #666;
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .support-content {
+        padding: 25px;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .support-container {
+        padding: 0 15px;
+    }
+    
+    .support-content {
+        padding: 20px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+    }
 }
