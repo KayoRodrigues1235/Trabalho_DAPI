@@ -18,18 +18,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Abrir carrinho
             abrirCarrinhoBtn.addEventListener('click', function() {
                 carrinhoModal.classList.add('aberto');
-                overlay.classList.add('ativo');
+                overlay.classList.add('active');
             });
             
             // Fechar carrinho
             fecharCarrinhoBtn.addEventListener('click', function() {
                 carrinhoModal.classList.remove('aberto');
-                overlay.classList.remove('ativo');
+                overlay.classList.remove('active');
             });
             
             overlay.addEventListener('click', function() {
                 carrinhoModal.classList.remove('aberto');
-                overlay.classList.remove('ativo');
+                overlay.classList.remove('active');
             });
             
             // Adicionar item ao carrinho
@@ -162,14 +162,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Fecha o carrinho
                 carrinhoModal.classList.remove('aberto');
                 
-                overlay.classList.add('ativo');
-                compraConfirmada.classList.add('ativo');
+                overlay.classList.add('active');
+                compraConfirmada.classList.add('active');
             });
             
             // Fechar a mensagem de confirmação
             fecharConfirmacao.addEventListener('click', function() {
-                compraConfirmada.classList.remove('ativo');
-                overlay.classList.remove('ativo');
+                compraConfirmada.classList.remove('active');
+                overlay.classList.remove('active');
                 
                 // Limpa o carrinho após a compra
                 carrinhoItensArray = [];

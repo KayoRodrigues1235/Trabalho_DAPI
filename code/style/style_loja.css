@@ -149,23 +149,16 @@ h2 {
 
 /*Produtos*/
 .produtoGrid {
+    display: grid;
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
 }
 
 .produtoGrid:only-child,
 .produtoGrid:has(.produto:only-child) {
     justify-items: center;
-}
-
-.produto {
-    background-color: white;
-    border-radius: 12px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
 }
 
 .produto:hover {
@@ -293,18 +286,13 @@ h2 {
 }
 
 .cancelar {
-    width: 50px;
+    width: 24px;
     position: absolute;
-    top: 20px;
-    left: 200px;
-    background-color: white;
+    top: 22px;
+    left: 260px;
     border-radius: 8px;
     cursor: pointer;
     z-index: 10001;
-}
-
-.cancelar:hover {
-    background-color: red;
 }
 
 .miniopicao {
@@ -434,6 +422,12 @@ h2 {
     font-size: 24px;
 }
 
+.li a{
+    text-decoration: none;
+}
+
+
+
 .logos{
     text-decoration: none;
     display: flex;
@@ -454,6 +448,8 @@ h2 {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
 }
+
+
 
 .carrinho-item-info {
     flex-grow: 1;
@@ -522,6 +518,58 @@ h2 {
     font-family: Arial, sans-serif;
 }
 
+/* Menu lateral */
+.side-menu {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(to bottom, #f8bbd0, #f48fb1);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    z-index: 1001;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(126, 28, 64, 0.3);
+}
+
+.menu-title {
+    font-size: 1.5rem;
+    color: #7e1c40;
+    font-weight: bold;
+}
+
+.menu-nav ul {
+    list-style: none;
+}
+
+.menu-nav li {
+    margin-bottom: 15px;
+}
+
+.menu-nav a {
+    display: block;
+    text-decoration: none;
+    color: #7e1c40;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(5px);
+}
+
 .confirmar-compra {
     background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
     color: white;
@@ -580,10 +628,6 @@ h2 {
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     z-index: 999;
-}
-
-.overlay.ativo {
-    display: block;
 }
 
 .carrinho-vazio {
@@ -655,6 +699,8 @@ h2 {
     }
 }
 
+
+
 @media (max-width: 480px) {
     header {
         padding: 12px 20px;
@@ -674,11 +720,23 @@ h2 {
         right: -100%;
     }
 
-    .menuLoja {
-        flex-direction: column;
-        gap: 10px;
-        margin: 0 10px;
-    }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 
     .container {
         flex-direction: column;
@@ -704,11 +762,14 @@ h2 {
 
 .produto {
     border: 1px solid #ccc;
-    padding: 10px;
     width: 500px;
     margin-top: 20px;
-    text-align: center;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.402);
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
 .produto img {
