@@ -92,13 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Destacar o dia atual
         const currentDayElement = document.querySelector(`.day[data-day="${currentDayName}"]`);
         if (currentDayElement) {
             currentDayElement.style.backgroundColor = 'rgba(248, 187, 208, 0.3)';
             currentDayElement.querySelector('h4').style.color = '#ec407a';
 
-            // Adicionar badge "Hoje"
             const badge = document.createElement('span');
             badge.className = 'current-badge';
             badge.textContent = 'Hoje';

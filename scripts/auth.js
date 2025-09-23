@@ -1,4 +1,4 @@
-// Funcionalidades de autenticação
+
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
@@ -8,16 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const strengthBar = document.querySelector('.strength-bar');
     const strengthText = document.querySelector('.strength-text');
 
-    // Alternar entre login e cadastro
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
             const tab = this.getAttribute('data-tab');
-            
-            // Ativar botão
+ 
             tabButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
-            // Mostrar formulário correspondente
+
             document.querySelectorAll('.auth-form').forEach(form => {
                 form.classList.remove('active');
             });
@@ -25,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mostrar/ocultar senha
     togglePasswordButtons.forEach(button => {
         button.addEventListener('click', function() {
             const input = this.parentElement.querySelector('input');
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Verificar força da senha
     passwordInput.addEventListener('input', function() {
         const password = this.value;
         let strength = 0;
@@ -76,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         strengthText.style.color = color;
     });
 
-    // Validar confirmação de senha
     document.getElementById('register-confirm-password').addEventListener('input', function() {
         const password = document.getElementById('register-password').value;
         const confirmPassword = this.value;
@@ -88,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Formatar telefone
     document.getElementById('register-phone').addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
         
@@ -106,19 +99,16 @@ document.addEventListener('DOMContentLoaded', function() {
         e.target.value = value;
     });
 
-    // Submit do login
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
-        
-        // Simular login bem-sucedido
+
         alert('Login realizado com sucesso!');
         window.location.href = 'index.html';
     });
 
-    // Submit do cadastro
     registerForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -128,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('register-password').value;
         const confirmPassword = document.getElementById('register-confirm-password').value;
         
-        // Validações simples
         if (password !== confirmPassword) {
             alert('As senhas não coincidem!');
             return;
@@ -138,15 +127,12 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Você precisa aceitar os termos de uso!');
             return;
         }
-        
-        // Simular cadastro bem-sucedido
+
         alert('Cadastro realizado com sucesso! Faça login para continuar.');
-        
-        // Voltar para o login
+
         tabButtons[0].click();
     });
 
-    // Login com redes sociais (simulado)
     document.querySelectorAll('.social-btn').forEach(button => {
         button.addEventListener('click', function() {
             const network = this.classList.contains('google-btn') ? 'Google' : 'Facebook';
